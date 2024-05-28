@@ -1,0 +1,356 @@
+{
+    "worksheets": {
+        "worksheet": [
+            {
+                "@name": "Count(event_name)",
+                "table": {
+                    "view": {
+                        "datasources": {
+                            "datasource": {
+                                "@caption": "zydrunas-events (zydrunas-events)",
+                                "@name": "federated.1s0c0kt0i2n53a114d9kk113kkh5"
+                            }
+                        },
+                        "datasource-dependencies": {
+                            "@datasource": "federated.1s0c0kt0i2n53a114d9kk113kkh5",
+                            "column-instance": [
+                                {
+                                    "@column": "[date]",
+                                    "@derivation": "yr",
+                                    "@name": "[yr:date:qk]",
+                                    "@pivot": "key",
+                                    "@type": "ordinal"
+                                },
+                                {
+                                    "@column": "[event_name]",
+                                    "@derivation": "cnt",
+                                    "@name": "[cnt:event_name:qk]",
+                                    "@pivot": "key",
+                                    "@type": "quantitative"
+                                }
+                            ],
+                            "column": [
+                                {
+                                    "@caption": "date",
+                                    "@datatype": "date",
+                                    "@name": "[date]",
+                                    "@role": "dimension",
+                                    "@type": "ordinal"
+                                },
+                                {
+                                    "@caption": "event_name",
+                                    "@datatype": "string",
+                                    "@name": "[event_name]",
+                                    "@role": "dimension",
+                                    "@type": "nominal"
+                                }
+                            ]
+                        },
+                        "aggregation": {
+                            "@value": "true"
+                        }
+                    },
+                    "style": null,
+                    "panes": {
+                        "pane": {
+                            "@selection-relaxation-option": "selection-relaxation-allow",
+                            "view": {
+                                "breakdown": {
+                                    "@value": "auto"
+                                }
+                            },
+                            "mark": {
+                                "@class": "Bar"
+                            }
+                        }
+                    },
+                    "rows": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[cnt:event_name:qk]",
+                    "cols": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[yr:date:qk]"
+                },
+                "simple-id": {
+                    "@uuid": "{Document\\SH01}"
+                }
+            },
+            {
+                "@name": "median(place)",
+                "table": {
+                    "view": {
+                        "datasources": {
+                            "datasource": {
+                                "@caption": "zydrunas-events (zydrunas-events)",
+                                "@name": "federated.1s0c0kt0i2n53a114d9kk113kkh5"
+                            }
+                        },
+                        "datasource-dependencies": {
+                            "@datasource": "federated.1s0c0kt0i2n53a114d9kk113kkh5",
+                            "column-instance": [
+                                {
+                                    "@column": "[date]",
+                                    "@derivation": "yr",
+                                    "@name": "[yr:date:qk]",
+                                    "@pivot": "key",
+                                    "@type": "ordinal"
+                                },
+                                {
+                                    "@column": "[place]",
+                                    "@derivation": "med",
+                                    "@name": "[med:place:qk]",
+                                    "@pivot": "key",
+                                    "@type": "quantitative"
+                                }
+                            ],
+                            "column": [
+                                {
+                                    "@caption": "date",
+                                    "@datatype": "date",
+                                    "@name": "[date]",
+                                    "@role": "dimension",
+                                    "@type": "ordinal"
+                                },
+                                {
+                                    "@caption": "place",
+                                    "@datatype": "integer",
+                                    "@name": "[place]",
+                                    "@role": "dimension",
+                                    "@type": "ordinal"
+                                }
+                            ]
+                        },
+                        "aggregation": {
+                            "@value": "true"
+                        }
+                    },
+                    "style": null,
+                    "panes": {
+                        "pane": {
+                            "@selection-relaxation-option": "selection-relaxation-allow",
+                            "view": {
+                                "breakdown": {
+                                    "@value": "auto"
+                                }
+                            },
+                            "mark": {
+                                "@class": "Bar"
+                            }
+                        }
+                    },
+                    "rows": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[med:place:qk]",
+                    "cols": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[yr:date:qk]"
+                },
+                "simple-id": {
+                    "@uuid": "{Document\\SH01}"
+                }
+            },
+            {
+                "@name": "MAX(place)",
+                "table": {
+                    "view": {
+                        "datasources": {
+                            "datasource": {
+                                "@caption": "zydrunas-events (zydrunas-events)",
+                                "@name": "federated.1s0c0kt0i2n53a114d9kk113kkh5"
+                            }
+                        },
+                        "datasource-dependencies": {
+                            "@datasource": "federated.1s0c0kt0i2n53a114d9kk113kkh5",
+                            "column-instance": [
+                                {
+                                    "@column": "[level]",
+                                    "@derivation": "none",
+                                    "@name": "[none:level:qk]",
+                                    "@pivot": "key",
+                                    "@type": "ordinal"
+                                },
+                                {
+                                    "@column": "[place]",
+                                    "@derivation": "sum",
+                                    "@name": "[sum:place:qk]",
+                                    "@pivot": "key",
+                                    "@type": "quantitative"
+                                }
+                            ],
+                            "column": [
+                                {
+                                    "@caption": "level",
+                                    "@datatype": "string",
+                                    "@name": "[level]",
+                                    "@role": "dimension",
+                                    "@type": "nominal"
+                                },
+                                {
+                                    "@caption": "place",
+                                    "@datatype": "integer",
+                                    "@name": "[place]",
+                                    "@role": "dimension",
+                                    "@type": "ordinal"
+                                }
+                            ]
+                        },
+                        "aggregation": {
+                            "@value": "true"
+                        }
+                    },
+                    "style": null,
+                    "panes": {
+                        "pane": {
+                            "@selection-relaxation-option": "selection-relaxation-allow",
+                            "view": {
+                                "breakdown": {
+                                    "@value": "auto"
+                                }
+                            },
+                            "mark": {
+                                "@class": "Automatic"
+                            }
+                        }
+                    },
+                    "rows": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[sum:place:qk]",
+                    "cols": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[none:level:qk]"
+                },
+                "simple-id": {
+                    "@uuid": "{Document\\SH01}"
+                }
+            },
+            {
+                "@name": "COUNT(place)",
+                "table": {
+                    "view": {
+                        "datasources": {
+                            "datasource": {
+                                "@caption": "zydrunas-events (zydrunas-events)",
+                                "@name": "federated.1s0c0kt0i2n53a114d9kk113kkh5"
+                            }
+                        },
+                        "datasource-dependencies": {
+                            "@datasource": "federated.1s0c0kt0i2n53a114d9kk113kkh5",
+                            "column-instance": [
+                                {
+                                    "@column": "[place]",
+                                    "@derivation": "none",
+                                    "@name": "[none:place:qk]",
+                                    "@pivot": "key",
+                                    "@type": "ordinal"
+                                },
+                                {
+                                    "@column": "[place]",
+                                    "@derivation": "cnt",
+                                    "@name": "[cnt:place:qk]",
+                                    "@pivot": "key",
+                                    "@type": "quantitative"
+                                }
+                            ],
+                            "column": [
+                                {
+                                    "@caption": "place",
+                                    "@datatype": "integer",
+                                    "@name": "[place]",
+                                    "@role": "dimension",
+                                    "@type": "ordinal"
+                                },
+                                {
+                                    "@caption": "place",
+                                    "@datatype": "integer",
+                                    "@name": "[place]",
+                                    "@role": "dimension",
+                                    "@type": "ordinal"
+                                }
+                            ]
+                        },
+                        "aggregation": {
+                            "@value": "true"
+                        }
+                    },
+                    "style": null,
+                    "panes": {
+                        "pane": {
+                            "@selection-relaxation-option": "selection-relaxation-allow",
+                            "view": {
+                                "breakdown": {
+                                    "@value": "auto"
+                                }
+                            },
+                            "mark": {
+                                "@class": "Pie"
+                            }
+                        }
+                    },
+                    "rows": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[none:place:qk]",
+                    "cols": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[none:place:qk]"
+                },
+                "simple-id": {
+                    "@uuid": "{Document\\SH01}"
+                }
+            },
+            {
+                "@name": "count(event_name)",
+                "table": {
+                    "view": {
+                        "datasources": {
+                            "datasource": {
+                                "@caption": "zydrunas-events (zydrunas-events)",
+                                "@name": "federated.1s0c0kt0i2n53a114d9kk113kkh5"
+                            }
+                        },
+                        "datasource-dependencies": {
+                            "@datasource": "federated.1s0c0kt0i2n53a114d9kk113kkh5",
+                            "column-instance": [
+                                {
+                                    "@column": "[level]",
+                                    "@derivation": "none",
+                                    "@name": "[none:level:qk]",
+                                    "@pivot": "key",
+                                    "@type": "ordinal"
+                                },
+                                {
+                                    "@column": "[event_name]",
+                                    "@derivation": "cnt",
+                                    "@name": "[cnt:event_name:qk]",
+                                    "@pivot": "key",
+                                    "@type": "quantitative"
+                                }
+                            ],
+                            "column": [
+                                {
+                                    "@caption": "level",
+                                    "@datatype": "string",
+                                    "@name": "[level]",
+                                    "@role": "dimension",
+                                    "@type": "nominal"
+                                },
+                                {
+                                    "@caption": "event_name",
+                                    "@datatype": "string",
+                                    "@name": "[event_name]",
+                                    "@role": "dimension",
+                                    "@type": "nominal"
+                                }
+                            ]
+                        },
+                        "aggregation": {
+                            "@value": "true"
+                        }
+                    },
+                    "style": null,
+                    "panes": {
+                        "pane": {
+                            "@selection-relaxation-option": "selection-relaxation-allow",
+                            "view": {
+                                "breakdown": {
+                                    "@value": "auto"
+                                }
+                            },
+                            "mark": {
+                                "@class": "Bar"
+                            }
+                        }
+                    },
+                    "rows": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[cnt:event_name:qk]",
+                    "cols": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[none:level:qk]"
+                },
+                "simple-id": {
+                    "@uuid": "{Document\\SH01}"
+                }
+            }
+        ]
+    }
+}

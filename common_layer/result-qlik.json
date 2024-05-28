@@ -1,0 +1,154 @@
+{
+    "ws_sheets": {
+        "Document\\SH01": {
+            "sheet_info": {
+                "SheetId": "Document\\SH01",
+                "Title": "Main",
+                "ChildObjects": {
+                    "ObjectId": [
+                        "Document\\CS01",
+                        "Document\\SO01",
+                        "Document\\CH01",
+                        "Document\\CH02",
+                        "Document\\CH04",
+                        "Document\\CH05",
+                        "Document\\CH06"
+                    ]
+                }
+            },
+            "sheet_objects": [
+                {
+                    "sheet_object_info": {
+                        "ObjectId": "Document\\CS01",
+                        "Caption": "Current Selections",
+                        "Type": "Current Selections Box"
+                    },
+                    "dimension": [],
+                    "expression": []
+                },
+                {
+                    "sheet_object_info": {
+                        "ObjectId": "Document\\SO01",
+                        "Caption": null,
+                        "Type": "Search Object"
+                    },
+                    "dimension": [],
+                    "expression": []
+                },
+                {
+                    "sheet_object_info": {
+                        "ObjectId": "Document\\CH01",
+                        "Caption": "Count(event_name)",
+                        "Type": "Bar Chart"
+                    },
+                    "dimension": [
+                        {
+                            "ObjectId": "CH01",
+                            "PseudoDef": "=Year(date)",
+                            "Title": null
+                        }
+                    ],
+                    "expression": [
+                        {
+                            "ObjectId": "CH01",
+                            "Definition": "Count(event_name)",
+                            "Label": null,
+                            "Comment": null
+                        }
+                    ]
+                },
+                {
+                    "sheet_object_info": {
+                        "ObjectId": "Document\\CH02",
+                        "Caption": "median(place)",
+                        "Type": "Bar Chart"
+                    },
+                    "dimension": [
+                        {
+                            "ObjectId": "CH02",
+                            "PseudoDef": "=Year(date)",
+                            "Title": null
+                        }
+                    ],
+                    "expression": [
+                        {
+                            "ObjectId": "CH02",
+                            "Definition": "median(place)",
+                            "Label": null,
+                            "Comment": null
+                        }
+                    ]
+                },
+                {
+                    "sheet_object_info": {
+                        "ObjectId": "Document\\CH04",
+                        "Caption": "MAX(place)",
+                        "Type": "Pivot Table"
+                    },
+                    "dimension": [
+                        {
+                            "ObjectId": "CH04",
+                            "PseudoDef": "level",
+                            "Title": null
+                        }
+                    ],
+                    "expression": [
+                        {
+                            "ObjectId": "CH04",
+                            "Definition": "MAX(place)",
+                            "Label": null,
+                            "Comment": null
+                        }
+                    ]
+                },
+                {
+                    "sheet_object_info": {
+                        "ObjectId": "Document\\CH05",
+                        "Caption": "COUNT(place)",
+                        "Type": "Pie Chart"
+                    },
+                    "dimension": [
+                        {
+                            "ObjectId": "CH05",
+                            "PseudoDef": "place",
+                            "Title": null
+                        }
+                    ],
+                    "expression": [
+                        {
+                            "ObjectId": "CH05",
+                            "Definition": "COUNT(place)",
+                            "Label": null,
+                            "Comment": null
+                        }
+                    ]
+                },
+                {
+                    "sheet_object_info": {
+                        "ObjectId": "Document\\CH06",
+                        "Caption": "count(event_name)",
+                        "Type": "Bar Chart"
+                    },
+                    "dimension": [
+                        {
+                            "ObjectId": "CH06",
+                            "PseudoDef": "level",
+                            "Title": null
+                        }
+                    ],
+                    "expression": [
+                        {
+                            "ObjectId": "CH06",
+                            "Definition": "count(event_name)",
+                            "Label": null,
+                            "Comment": null
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "data_sources": [
+        "zydrunas-events"
+    ]
+}

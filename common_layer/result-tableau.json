@@ -1,0 +1,338 @@
+{
+    "event count per year": {
+        "sheet_info": {
+            "Sheet_Id": "{168CD7CD-71C1-44FF-BA57-7CB94E6C492F}",
+            "Title": "event count per year",
+            "ChildObjects": [
+                "pane"
+            ]
+        },
+        "sheet_objects": {
+            "pane": {
+                "dimensions": {
+                    "x_dimension": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[yr:date:ok]",
+                    "y_dimension": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[cnt:event_name:qk]",
+                    "pane": {
+                        "@selection-relaxation-option": "selection-relaxation-allow",
+                        "view": {
+                            "breakdown": {
+                                "@value": "auto"
+                            }
+                        },
+                        "mark": {
+                            "@class": "Bar"
+                        }
+                    }
+                },
+                "columns": {
+                    "@datasource": "federated.1s0c0kt0i2n53a114d9kk113kkh5",
+                    "column-instance": [
+                        {
+                            "@column": "[event_name]",
+                            "@derivation": "Count",
+                            "@name": "[cnt:event_name:qk]",
+                            "@pivot": "key",
+                            "@type": "quantitative"
+                        },
+                        {
+                            "@column": "[date]",
+                            "@derivation": "Year",
+                            "@name": "[yr:date:ok]",
+                            "@pivot": "key",
+                            "@type": "ordinal"
+                        }
+                    ],
+                    "column": [
+                        {
+                            "@caption": "Date",
+                            "@datatype": "date",
+                            "@name": "[date]",
+                            "@role": "dimension",
+                            "@type": "ordinal"
+                        },
+                        {
+                            "@caption": "Event Name",
+                            "@datatype": "string",
+                            "@name": "[event_name]",
+                            "@role": "dimension",
+                            "@type": "nominal"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "level": {
+        "sheet_info": {
+            "Sheet_Id": "{64686F7C-D8CE-4441-BCE9-650CDCB002FB}",
+            "Title": "level",
+            "ChildObjects": [
+                "pane"
+            ]
+        },
+        "sheet_objects": {
+            "pane": {
+                "dimensions": {
+                    "x_dimension": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[none:level:nk]",
+                    "y_dimension": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[cnt:event_name:qk]",
+                    "pane": {
+                        "@selection-relaxation-option": "selection-relaxation-allow",
+                        "view": {
+                            "breakdown": {
+                                "@value": "auto"
+                            }
+                        },
+                        "mark": {
+                            "@class": "Automatic"
+                        }
+                    }
+                },
+                "columns": {
+                    "@datasource": "federated.1s0c0kt0i2n53a114d9kk113kkh5",
+                    "column-instance": [
+                        {
+                            "@column": "[event_name]",
+                            "@derivation": "Count",
+                            "@name": "[cnt:event_name:qk]",
+                            "@pivot": "key",
+                            "@type": "quantitative"
+                        },
+                        {
+                            "@column": "[level]",
+                            "@derivation": "None",
+                            "@name": "[none:level:nk]",
+                            "@pivot": "key",
+                            "@type": "nominal"
+                        }
+                    ],
+                    "column": [
+                        {
+                            "@caption": "Event Name",
+                            "@datatype": "string",
+                            "@name": "[event_name]",
+                            "@role": "dimension",
+                            "@type": "nominal"
+                        },
+                        {
+                            "@caption": "Level",
+                            "@datatype": "string",
+                            "@name": "[level]",
+                            "@role": "dimension",
+                            "@type": "nominal"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "max place per level": {
+        "sheet_info": {
+            "Sheet_Id": "{EF1726E1-96C6-4352-9731-A9EC9778090D}",
+            "Title": "max place per level",
+            "ChildObjects": [
+                "pane"
+            ]
+        },
+        "sheet_objects": {
+            "pane": {
+                "dimensions": {
+                    "x_dimension": "",
+                    "y_dimension": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[none:level:nk]",
+                    "pane": {
+                        "@selection-relaxation-option": "selection-relaxation-allow",
+                        "view": {
+                            "breakdown": {
+                                "@value": "auto"
+                            }
+                        },
+                        "mark": {
+                            "@class": "Automatic"
+                        },
+                        "encodings": {
+                            "text": {
+                                "@column": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[max:place:qk]"
+                            }
+                        },
+                        "style": {
+                            "style-rule": {
+                                "@element": "mark",
+                                "format": [
+                                    {
+                                        "@attr": "mark-labels-show",
+                                        "@value": "true"
+                                    },
+                                    {
+                                        "@attr": "mark-labels-cull",
+                                        "@value": "true"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "columns": {
+                    "@datasource": "federated.1s0c0kt0i2n53a114d9kk113kkh5",
+                    "column": [
+                        {
+                            "@caption": "Level",
+                            "@datatype": "string",
+                            "@name": "[level]",
+                            "@role": "dimension",
+                            "@type": "nominal"
+                        },
+                        {
+                            "@aggregation": "Sum",
+                            "@caption": "Place",
+                            "@datatype": "integer",
+                            "@name": "[place]",
+                            "@role": "dimension",
+                            "@type": "ordinal"
+                        }
+                    ],
+                    "column-instance": [
+                        {
+                            "@column": "[place]",
+                            "@derivation": "Max",
+                            "@name": "[max:place:qk]",
+                            "@pivot": "key",
+                            "@type": "quantitative"
+                        },
+                        {
+                            "@column": "[level]",
+                            "@derivation": "None",
+                            "@name": "[none:level:nk]",
+                            "@pivot": "key",
+                            "@type": "nominal"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "medals distribution": {
+        "sheet_info": {
+            "Sheet_Id": "{9F5BBFD4-BA47-4552-8E32-80D9033DDC0B}",
+            "Title": "medals distribution",
+            "ChildObjects": [
+                "pane"
+            ]
+        },
+        "sheet_objects": {
+            "pane": {
+                "dimensions": {
+                    "x_dimension": "",
+                    "y_dimension": "",
+                    "pane": {
+                        "@selection-relaxation-option": "selection-relaxation-allow",
+                        "view": {
+                            "breakdown": {
+                                "@value": "auto"
+                            }
+                        },
+                        "mark": {
+                            "@class": "Pie"
+                        },
+                        "encodings": {
+                            "color": {
+                                "@column": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[Place (group)]"
+                            },
+                            "wedge-size": {
+                                "@column": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[cnt:place:qk]"
+                            }
+                        }
+                    }
+                },
+                "columns": {
+                    "@datasource": "federated.1s0c0kt0i2n53a114d9kk113kkh5",
+                    "column": [
+                        {
+                            "@datatype": "string",
+                            "@name": "[Place (group)]",
+                            "@role": "dimension",
+                            "@type": "ordinal"
+                        },
+                        {
+                            "@aggregation": "Sum",
+                            "@caption": "Place",
+                            "@datatype": "integer",
+                            "@name": "[place]",
+                            "@role": "dimension",
+                            "@type": "ordinal"
+                        }
+                    ],
+                    "column-instance": {
+                        "@column": "[place]",
+                        "@derivation": "Count",
+                        "@name": "[cnt:place:qk]",
+                        "@pivot": "key",
+                        "@type": "quantitative"
+                    }
+                }
+            }
+        }
+    },
+    "median place per year": {
+        "sheet_info": {
+            "Sheet_Id": "{18A65D12-B395-4E34-9A5B-3494116FD442}",
+            "Title": "median place per year",
+            "ChildObjects": [
+                "pane"
+            ]
+        },
+        "sheet_objects": {
+            "pane": {
+                "dimensions": {
+                    "x_dimension": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[yr:date:ok]",
+                    "y_dimension": "[federated.1s0c0kt0i2n53a114d9kk113kkh5].[med:place:qk]",
+                    "pane": {
+                        "@selection-relaxation-option": "selection-relaxation-allow",
+                        "view": {
+                            "breakdown": {
+                                "@value": "auto"
+                            }
+                        },
+                        "mark": {
+                            "@class": "Bar"
+                        }
+                    }
+                },
+                "columns": {
+                    "@datasource": "federated.1s0c0kt0i2n53a114d9kk113kkh5",
+                    "column": [
+                        {
+                            "@caption": "Date",
+                            "@datatype": "date",
+                            "@name": "[date]",
+                            "@role": "dimension",
+                            "@type": "ordinal"
+                        },
+                        {
+                            "@aggregation": "Sum",
+                            "@caption": "Place",
+                            "@datatype": "integer",
+                            "@name": "[place]",
+                            "@role": "dimension",
+                            "@type": "ordinal"
+                        }
+                    ],
+                    "column-instance": [
+                        {
+                            "@column": "[place]",
+                            "@derivation": "Median",
+                            "@name": "[med:place:qk]",
+                            "@pivot": "key",
+                            "@type": "quantitative"
+                        },
+                        {
+                            "@column": "[date]",
+                            "@derivation": "Year",
+                            "@name": "[yr:date:ok]",
+                            "@pivot": "key",
+                            "@type": "ordinal"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

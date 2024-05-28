@@ -1,0 +1,25 @@
+"Workbook_1": {
+	"data_source": {
+                    "data_source_name": "<name_of_ds>",
+                    "table_name": "<name_of_table_in_ds>",
+                    "unique_script": "unique_script_for_this_data_source"
+                    },
+        "sheet_1": {
+            "name_of_object_1": {
+                "description": {
+                    "type": "<type_of_object>",
+                    "title": "<title_of_object>".
+                    "position_in_sheet": "<title_of_object>"
+                        },
+                "x_equation": {
+                    'aggregation': "<aggregation_in_x_axis>",
+                    'column': "<column_in_x_axis>"
+                    },
+                "y_equation": {
+                    'aggregation': "<aggregation_in_y_axis>",
+                    'column': "<column_in_y_axis>"
+                    },
+                
+            }
+        }
+    }

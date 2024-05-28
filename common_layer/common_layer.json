@@ -1,0 +1,132 @@
+{
+    "Workbook": {
+        "data_source": {
+            "data_source_name": "zydrunas-events",
+            "table_name": "<name_of_table_in_ds>",
+            "unique_script": "unique_script_for_this_data_source",
+            "name": "federated.1s0c0kt0i2n53a114d9kk113kkh5",
+            "caption": "zydrunas-events (zydrunas-events)",
+            "columns": {
+                "[Place (group)]": {
+                    "datatype": "string",
+                    "name": "[Place (group)]",
+                    "role": "dimension",
+                    "type": "ordinal"
+                },
+                "[date]": {
+                    "datatype": "date",
+                    "name": "[date]",
+                    "role": "dimension",
+                    "type": "ordinal"
+                },
+                "[event_name]": {
+                    "datatype": "string",
+                    "name": "[event_name]",
+                    "role": "dimension",
+                    "type": "nominal"
+                },
+                "[event_name_and_date]": {
+                    "datatype": "string",
+                    "name": "[event_name_and_date]",
+                    "role": "dimension",
+                    "type": "nominal"
+                },
+                "[id]": {
+                    "datatype": "integer",
+                    "name": "[id]",
+                    "role": "dimension",
+                    "type": "ordinal"
+                },
+                "[level]": {
+                    "datatype": "string",
+                    "name": "[level]",
+                    "role": "dimension",
+                    "type": "nominal"
+                },
+                "[place]": {
+                    "datatype": "integer",
+                    "name": "[place]",
+                    "role": "dimension",
+                    "type": "ordinal"
+                }
+            }
+        },
+        "Document\\SH01": {
+            "Document\\CH01": {
+                "description": {
+                    "type": "Bar Chart",
+                    "title": "Count(event_name)",
+                    "position": "Add Position Here"
+                },
+                "x_equation": {
+                    "aggregation": "year",
+                    "column": "date"
+                },
+                "y_equation": {
+                    "aggregation": "count",
+                    "column": "event_name"
+                }
+            },
+            "Document\\CH02": {
+                "description": {
+                    "type": "Bar Chart",
+                    "title": "median(place)",
+                    "position": "Add Position Here"
+                },
+                "x_equation": {
+                    "aggregation": "year",
+                    "column": "date"
+                },
+                "y_equation": {
+                    "aggregation": "median",
+                    "column": "place"
+                }
+            },
+            "Document\\CH04": {
+                "description": {
+                    "type": "Pivot Table",
+                    "title": "MAX(place)",
+                    "position": "Add Position Here"
+                },
+                "x_equation": {
+                    "aggregation": "none",
+                    "column": "level"
+                },
+                "y_equation": {
+                    "aggregation": "max",
+                    "column": "place"
+                }
+            },
+            "Document\\CH05": {
+                "description": {
+                    "type": "Pie Chart",
+                    "title": "COUNT(place)",
+                    "position": "Add Position Here"
+                },
+                "x_equation": {
+                    "aggregation": "none",
+                    "column": "place"
+                },
+                "y_equation": {
+                    "aggregation": "count",
+                    "column": "place"
+                }
+            },
+            "Document\\CH06": {
+                "description": {
+                    "type": "Bar Chart",
+                    "title": "count(event_name)",
+                    "position": "Add Position Here"
+                },
+                "x_equation": {
+                    "aggregation": "none",
+                    "column": "level"
+                },
+                "y_equation": {
+                    "aggregation": "count",
+                    "column": "event_name"
+                }
+            }
+        }
+    }
+}

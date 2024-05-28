@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Workbook>
+	<worksheets>
+		<worksheet name="Count(event_name)">
+			<table>
+				<view>
+					<datasources>
+						<datasource caption="zydrunas-events (zydrunas-events)" name="federated.1s0c0kt0i2n53a114d9kk113kkh5"></datasource>
+					</datasources>
+					<datasource-dependencies datasource="federated.1s0c0kt0i2n53a114d9kk113kkh5">
+						<column-instance column="[date]" derivation="yr" name="[yr:date:qk]" pivot="key" type="ordinal"></column-instance>
+						<column-instance column="[event_name]" derivation="cnt" name="[cnt:event_name:qk]" pivot="key" type="quantitative"></column-instance>
+						<column caption="date" datatype="date" name="[date]" role="dimension" type="ordinal"></column>
+						<column caption="event_name" datatype="string" name="[event_name]" role="dimension" type="nominal"></column>
+					</datasource-dependencies>
+					<aggregation value="true"></aggregation>
+				</view>
+				<style></style>
+				<panes>
+					<pane selection-relaxation-option="selection-relaxation-allow">
+						<view>
+							<breakdown value="auto"></breakdown>
+						</view>
+						<mark class="Bar"></mark>
+					</pane>
+				</panes>
+				<rows>[federated.1s0c0kt0i2n53a114d9kk113kkh5].[cnt:event_name:qk]</rows>
+				<cols>[federated.1s0c0kt0i2n53a114d9kk113kkh5].[yr:date:qk]</cols>
+			</table>
+			<simple-id uuid="{Document\SH01}"></simple-id>
+		</worksheet>
+		<worksheet name="median(place)">
+			<table>
+				<view>
+					<datasources>
+						<datasource caption="zydrunas-events (zydrunas-events)" name="federated.1s0c0kt0i2n53a114d9kk113kkh5"></datasource>
+					</datasources>
+					<datasource-dependencies datasource="federated.1s0c0kt0i2n53a114d9kk113kkh5">
+						<column-instance column="[date]" derivation="yr" name="[yr:date:qk]" pivot="key" type="ordinal"></column-instance>
+						<column-instance column="[place]" derivation="med" name="[med:place:qk]" pivot="key" type="quantitative"></column-instance>
+						<column caption="date" datatype="date" name="[date]" role="dimension" type="ordinal"></column>
+						<column caption="place" datatype="integer" name="[place]" role="dimension" type="ordinal"></column>
+					</datasource-dependencies>
+					<aggregation value="true"></aggregation>
+				</view>
+				<style></style>
+				<panes>
+					<pane selection-relaxation-option="selection-relaxation-allow">
+						<view>
+							<breakdown value="auto"></breakdown>
+						</view>
+						<mark class="Bar"></mark>
+					</pane>
+				</panes>
+				<rows>[federated.1s0c0kt0i2n53a114d9kk113kkh5].[med:place:qk]</rows>
+				<cols>[federated.1s0c0kt0i2n53a114d9kk113kkh5].[yr:date:qk]</cols>
+			</table>
+			<simple-id uuid="{Document\SH01}"></simple-id>
+		</worksheet>
+		<worksheet name="MAX(place)">
+			<table>
+				<view>
+					<datasources>
+						<datasource caption="zydrunas-events (zydrunas-events)" name="federated.1s0c0kt0i2n53a114d9kk113kkh5"></datasource>
+					</datasources>
+					<datasource-dependencies datasource="federated.1s0c0kt0i2n53a114d9kk113kkh5">
+						<column-instance column="[level]" derivation="none" name="[none:level:qk]" pivot="key" type="ordinal"></column-instance>
+						<column-instance column="[place]" derivation="sum" name="[sum:place:qk]" pivot="key" type="quantitative"></column-instance>
+						<column caption="level" datatype="string" name="[level]" role="dimension" type="nominal"></column>
+						<column caption="place" datatype="integer" name="[place]" role="dimension" type="ordinal"></column>
+					</datasource-dependencies>
+					<aggregation value="true"></aggregation>
+				</view>
+				<style></style>
+				<panes>
+					<pane selection-relaxation-option="selection-relaxation-allow">
+						<view>
+							<breakdown value="auto"></breakdown>
+						</view>
+						<mark class="Automatic"></mark>
+					</pane>
+				</panes>
+				<rows>[federated.1s0c0kt0i2n53a114d9kk113kkh5].[sum:place:qk]</rows>
+				<cols>[federated.1s0c0kt0i2n53a114d9kk113kkh5].[none:level:qk]</cols>
+			</table>
+			<simple-id uuid="{Document\SH01}"></simple-id>
+		</worksheet>
+		<worksheet name="COUNT(place)">
+			<table>
+				<view>
+					<datasources>
+						<datasource caption="zydrunas-events (zydrunas-events)" name="federated.1s0c0kt0i2n53a114d9kk113kkh5"></datasource>
+					</datasources>
+					<datasource-dependencies datasource="federated.1s0c0kt0i2n53a114d9kk113kkh5">
+						<column-instance column="[place]" derivation="none" name="[none:place:qk]" pivot="key" type="ordinal"></column-instance>
+						<column-instance column="[place]" derivation="cnt" name="[cnt:place:qk]" pivot="key" type="quantitative"></column-instance>
+						<column caption="place" datatype="integer" name="[place]" role="dimension" type="ordinal"></column>
+						<column caption="place" datatype="integer" name="[place]" role="dimension" type="ordinal"></column>
+					</datasource-dependencies>
+					<aggregation value="true"></aggregation>
+				</view>
+				<style></style>
+				<panes>
+					<pane selection-relaxation-option="selection-relaxation-allow">
+						<view>
+							<breakdown value="auto"></breakdown>
+						</view>
+						<mark class="Pie"></mark>
+					</pane>
+				</panes>
+				<rows>[federated.1s0c0kt0i2n53a114d9kk113kkh5].[none:place:qk]</rows>
+				<cols>[federated.1s0c0kt0i2n53a114d9kk113kkh5].[none:place:qk]</cols>
+			</table>
+			<simple-id uuid="{Document\SH01}"></simple-id>
+		</worksheet>
+		<worksheet name="count(event_name)">
+			<table>
+				<view>
+					<datasources>
+						<datasource caption="zydrunas-events (zydrunas-events)" name="federated.1s0c0kt0i2n53a114d9kk113kkh5"></datasource>
+					</datasources>
+					<datasource-dependencies datasource="federated.1s0c0kt0i2n53a114d9kk113kkh5">
+						<column-instance column="[level]" derivation="none" name="[none:level:qk]" pivot="key" type="ordinal"></column-instance>
+						<column-instance column="[event_name]" derivation="cnt" name="[cnt:event_name:qk]" pivot="key" type="quantitative"></column-instance>
+						<column caption="level" datatype="string" name="[level]" role="dimension" type="nominal"></column>
+						<column caption="event_name" datatype="string" name="[event_name]" role="dimension" type="nominal"></column>
+					</datasource-dependencies>
+					<aggregation value="true"></aggregation>
+				</view>
+				<style></style>
+				<panes>
+					<pane selection-relaxation-option="selection-relaxation-allow">
+						<view>
+							<breakdown value="auto"></breakdown>
+						</view>
+						<mark class="Bar"></mark>
+					</pane>
+				</panes>
+				<rows>[federated.1s0c0kt0i2n53a114d9kk113kkh5].[cnt:event_name:qk]</rows>
+				<cols>[federated.1s0c0kt0i2n53a114d9kk113kkh5].[none:level:qk]</cols>
+			</table>
+			<simple-id uuid="{Document\SH01}"></simple-id>
+		</worksheet>
+	</worksheets>
+</Workbook>
